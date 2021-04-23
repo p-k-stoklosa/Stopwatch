@@ -10,11 +10,10 @@ body {
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 40px;
-    background-color: #222;
+    background: linear-gradient(to right, #cb2d3e, #ef473a);
 }
 
 .container {
-    background-color: #222;
     width: 100%;
     max-width: 800px;
     height: 100%;
@@ -24,14 +23,12 @@ body {
 }
 
 .time {
-    background-color: #222;
     height: auto;
     width: 100%;
     text-align: center;
 }
 
 .time .actualtime {
-    background-color: #222;
     height: 300px;
     width: 300px;
     margin: auto;
@@ -46,7 +43,6 @@ body {
 }
 
 .laps {
-    background-color: #222;
     color: white;
     max-height: 300px;
     overflow-y: scroll;
@@ -58,7 +54,6 @@ body {
 }
 
 .buttons {
-    background-color: #222;
     height: 8vh;
 }
 
@@ -76,6 +71,43 @@ button:focus {
 }
 
 p {
-    background-color: rgb(31, 30, 30);
     border-bottom: groove 1px white;
+}
+
+@media screen and (max-width: 415px) {
+    .time .actualtime {
+        height: 200px;
+        width: 200px;
+    }
+
+    .laps {
+        margin: auto 10%;
+        width: 80%;
+    }
+
+    .actualtime span {
+        line-height: 185px;
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-height: 830px) {
+    .container {
+        padding: 0px 25px;
+        margin: 0px 0px;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-height: 790px) {
+
+    .laps {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-height: 730px) {
+    .laps {
+        max-height: 200px;
+    }
 }
