@@ -10,25 +10,25 @@ let ifTrue = true;
 let interval;
 
 const stopWatch = () => {
+    let startTime = Date.now() - time;
     if (ifTrue) {
         ifTrue = !ifTrue;
         btnStart.textContent = "STOP";
         btnStart.style.backgroundColor = "#b71c1c";
-        interval = setInterval(start, 10);
+        interval = setInterval(() => {
+            const elapsedTime = Date.now() - startTime;
+            time = elapsedTime;
+            if (elapsedTime < 10000) {
+                divTime.textContent = `0${(elapsedTime / 1000).toFixed(2)}`;
+            } else {
+                divTime.textContent = (elapsedTime / 1000).toFixed(2);
+            }
+        });
     } else {
         ifTrue = !ifTrue;
         btnStart.textContent = "START";
         btnStart.style.backgroundColor = "white";
         clearInterval(interval);
-    }
-}
-
-const start = () => {
-    time++
-    if (time < 1000) {
-        divTime.textContent = `0${(time / 100).toFixed(2)}`;
-    } else {
-        divTime.textContent = (time / 100).toFixed(2);
     }
 }
 
